@@ -1,0 +1,33 @@
+object Versions {
+
+    const val KotlinCoroutinesVersion = "1.6.1"
+    const val CoreKtxVersion = "1.7.0"
+    const val HiltVersion = "2.42"
+    const val AppCompat = "1.5.1"
+
+    const val LifecycleVersion = "2.4.1"
+    const val FragmentKtxVersion = "1.4.1"
+    const val ActivityKtxVersion = "1.4.0"
+    const val CoroutinesAndroidVersion = "1.6.1"
+    const val MaterialDesignVersion = "1.6.1"
+    const val ConstraintLayoutVersion = "2.1.3"
+    const val RecyclerView = "1.2.1"
+    const val RetrofitVersion = "2.9.0"
+    const val OkHttpVersion = "4.9.3"
+    const val CoilVersion = "2.1.0"
+    const val JunitVersion = "4.13.2"
+    const val EspressoVersion = "3.5.0"
+    const val AndroidTestVersion = "1.1.3"
+    const val MockitoCoreVersion = "2.28.2"
+    const val MockitoAndroidVersion = "2.24.5"
+    const val CoroutineTest = "1.5.2"
+    const val CoreTesting = "2.1.0"
+
+    const val TimberVersion = "5.0.1"
+    const val KotlinxSerializationJsonVersion = "1.2.2"
+    const val KotlinxSerializationConverterVersion = "0.8.0"
+    const val GsonVersion = "2.8.9"
+    const val GsonConverterVersion = "2.9.0"
+    const val NavVersion = "2.5.0"
+    const val RoomVersion = "2.4.3"
+}
