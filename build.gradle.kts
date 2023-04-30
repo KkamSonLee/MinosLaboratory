@@ -3,6 +3,7 @@
 buildscript {
     dependencies {
         classpath(Plugins.HILT_PLUGIN)
+        classpath(Plugins.SAFE_ARGS_PLUGIN)
     }
 }
 plugins {

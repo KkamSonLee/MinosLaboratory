@@ -28,6 +28,6 @@ object Versions {
     const val KotlinxSerializationConverterVersion = "0.8.0"
     const val GsonVersion = "2.8.9"
     const val GsonConverterVersion = "2.9.0"
-    const val NavVersion = "2.5.0"
+    const val NavVersion = "2.4.1"
     const val RoomVersion = "2.4.3"
 }

@@ -1,10 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
     id("kotlin-parcelize")
-
 }
 
 android {
@@ -45,6 +45,7 @@ dependencies {
     addAndroidXDependencies()
     addNetworkDependencies()
     addRoomDependencies()
+    addNavigationDependencies()
     addLifecycleDependencies()
     addDaggerHiltDependencies()
     implementation(ThirdPartyDependencies.TIMBER)

@@ -14,7 +14,6 @@ abstract class BaseViewModel<S : ViewState, E : EventState, SE : SideEffect> : V
     abstract val state: S
     abstract fun handleEvents(event: E)
 
-
     private val _event = MutableSharedFlow<E>(
         extraBufferCapacity = Int.MAX_VALUE,
         onBufferOverflow = BufferOverflow.DROP_OLDEST,
@@ -41,18 +40,25 @@ abstract class BaseViewModel<S : ViewState, E : EventState, SE : SideEffect> : V
     }
 
     fun emitDelayEvent(event: E) {
-        _debounceEvent.tryEmit(event)
+        viewModelScope.launch {
+            _debounceEvent.emit(event)
+        }
     }
 
-    fun collectEvents() {
+    private fun collectEvents() {
         viewModelScope.launch {
             _event.collect { handleEvents(it) }
         }
     }
 
-    fun collectDebounceEvent() {
+    private fun collectDebounceEvent() {
         viewModelScope.launch {
             _debounceEvent.debounce(2000).map { listOf(it) }.flatMapConcat { it.asFlow() }.collect { handleEvents(it) }
         }
+    }
+
+    init {
+        collectEvents()
+        collectDebounceEvent()
     }
 }

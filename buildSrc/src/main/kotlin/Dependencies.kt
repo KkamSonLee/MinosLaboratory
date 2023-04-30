@@ -16,6 +16,9 @@ object AndroidXDependencies {
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.RoomVersion}"
     const val COROUTINE =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.CoroutinesAndroidVersion}"
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.NavVersion}"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.NavVersion}"
     const val VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LifecycleVersion}"
     const val LIFECYCLE_KTS =
         "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LifecycleVersion}"

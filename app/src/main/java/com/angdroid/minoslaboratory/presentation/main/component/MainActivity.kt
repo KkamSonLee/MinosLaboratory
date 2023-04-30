@@ -7,9 +7,9 @@ import androidx.activity.viewModels
 import com.angdroid.minoslaboratory.R
 import com.angdroid.minoslaboratory.databinding.ActivityMainBinding
 import com.angdroid.minoslaboratory.presentation.base.component.BaseActivity
-import com.angdroid.minoslaboratory.presentation.main.s.MainContract.MainViewState
-import com.angdroid.minoslaboratory.presentation.main.s.MainContract.MainSideEffect
-import com.angdroid.minoslaboratory.presentation.main.s.MainContract.MainViewModelAction
+import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewState
+import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainSideEffect
+import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewModelAction
 import com.angdroid.minoslaboratory.presentation.main.vm.MainViewModel
 import com.angdroid.minoslaboratory.presentation.util.collectFlow
 import dagger.hilt.android.AndroidEntryPoint

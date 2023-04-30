@@ -75,3 +75,10 @@ fun DependencyHandlerScope.addRoomDependencies() {
     )
     kapt(KaptDependencies.ROOM_COMPILER)
 }
+
+fun DependencyHandlerScope.addNavigationDependencies() {
+    implementations(
+        AndroidXDependencies.navigationFragment,
+        AndroidXDependencies.navigationUI
+    )
+}
