@@ -7,13 +7,13 @@
 
         <variable
             name="mainViewModel"
-            type="com.angdroid.minoslaboratory.presentation.main.vm.MainViewModel" />
+            type="com.angdroid.minoslaboratory.presentation.main.vm.MainMviViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.component.MainActivity">
+        tools:context=".presentation.main.component.MainMviActivity">
 
         <TextView
             android:id="@+id/textView"

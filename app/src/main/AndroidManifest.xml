@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MinosLaboratory"
         tools:targetApi="32">
         <activity
-            android:name=".presentation.main.component.MainActivity"
+            android:name=".presentation.main.component.MainMviActivity"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

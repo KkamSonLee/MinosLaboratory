@@ -2,7 +2,7 @@ package com.angdroid.minoslaboratory.presentation.main.vm
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
-import com.angdroid.minoslaboratory.presentation.base.component.BaseViewModel
+import com.angdroid.minoslaboratory.presentation.base.component.BaseMviViewModel
 import com.angdroid.minoslaboratory.domain.repository.main.MainRepository
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainSideEffect
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewState
@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val mainService: MainRepository) : BaseViewModel<MainViewState, MainViewModelAction, MainSideEffect>() {
+class MainMviViewModel @Inject constructor(private val mainService: MainRepository) : BaseMviViewModel<MainViewState, MainViewModelAction, MainSideEffect>() {
 
     private val _state = MainViewStateImpl()
     override val state: MainViewState = _state
