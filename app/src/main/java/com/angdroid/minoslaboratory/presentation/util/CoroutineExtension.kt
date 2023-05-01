@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-inline fun <T, R> R.collectFlow(
+inline fun <T, R: LifecycleOwner> R.collectFlow(
     flow: Flow<T>, state: Lifecycle.State = Lifecycle.State.STARTED, crossinline block: suspend (T) -> Unit
 ) {
     when (this) {
