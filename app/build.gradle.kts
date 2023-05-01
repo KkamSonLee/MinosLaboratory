@@ -48,5 +48,6 @@ dependencies {
     addNavigationDependencies()
     addLifecycleDependencies()
     addDaggerHiltDependencies()
+    implementation(ThirdPartyDependencies.COIL)
     implementation(ThirdPartyDependencies.TIMBER)
 }

@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.angdroid.minoslaboratory.R
 import com.angdroid.minoslaboratory.databinding.ActivityMainBinding
+import com.angdroid.minoslaboratory.notify.Notification
 import com.angdroid.minoslaboratory.presentation.base.component.BaseMviActivity
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewState
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainSideEffect
@@ -28,6 +29,7 @@ class MainMviActivity : BaseMviActivity<ActivityMainBinding, MainViewState, Main
     private fun clickEvent() {
         binding.button.setOnClickListener {
             ownViewModel.emitEvent(MainViewModelAction.FetchUserData)
+            Notification(this, "titleasdashdaskdhasjkdhasjkdhaskdjfahlsadfkjhsafjksdhfjkslahfsajkfhsdkjfsahksd\njasdsadad\nsadasdasdsadsfh", "bBOBOBOBOBOody")
         }
         binding.button2.setOnClickListener {
             ownViewModel.emitDelayEvent(MainViewModelAction.FetchUserData)
