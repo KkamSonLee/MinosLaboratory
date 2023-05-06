@@ -23,6 +23,7 @@ object AndroidXDependencies {
     const val LIFECYCLE_KTS =
         "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LifecycleVersion}"
     const val CORE_KTX = "androidx.core:core-ktx:${Versions.CoreKtxVersion}"
+    const val WORK_MANAGER = "androidx.work:work-runtime-ktx:${Versions.WorkManager}"
 }
 
 object ThirdPartyDependencies {

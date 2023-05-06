@@ -50,4 +50,5 @@ dependencies {
     addDaggerHiltDependencies()
     implementation(ThirdPartyDependencies.COIL)
     implementation(ThirdPartyDependencies.TIMBER)
+    implementation(AndroidXDependencies.WORK_MANAGER)
 }
