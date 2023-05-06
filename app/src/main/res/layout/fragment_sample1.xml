@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="sampleFm1ViewModel"
+            type="com.angdroid.minoslaboratory.presentation.main.vm.SampleViewModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.main.component.SampleFragment1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{`sample 1 ` + sampleFm1ViewModel.viewState.name}" />
+
+        <Button
+            android:id="@+id/btn_send_event_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send Event Sample 1" />
+
+    </FrameLayout>
+</layout>
