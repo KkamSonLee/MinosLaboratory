@@ -95,17 +95,13 @@ class Notification(
 
     private fun asyncLoadIcon(imageUrl: String, setIcon: (IconCompat) -> Unit) {
         if (imageUrl.isEmpty()) {
-            Log.e("IS EMPTY", imageUrl)
             setIcon(IconCompat.createWithResource(context, R.drawable.ic_launcher_foreground))
         }
         else {
-            Log.e("CALL", "coil $imageUrl")
             // using COIL to load the image
             val request = ImageRequest.Builder(context)
                 .data(imageUrl)
                 .target { drawable ->
-
-                    Log.e("CALL", "Target")
                     setIcon(IconCompat.createWithBitmap((drawable as BitmapDrawable).bitmap)) //  // Return the fetched icon from the URL
                 }
                 .listener(object : ImageRequest.Listener { // Return null icon if the URL is wrong

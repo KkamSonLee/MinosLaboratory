@@ -1,5 +1,6 @@
 package com.angdroid.minoslaboratory.domain.repository.main
 
+import com.angdroid.minoslaboratory.data.dto.AndroidVersion
 import com.angdroid.minoslaboratory.domain.entity.User
 
 interface MainRepository {

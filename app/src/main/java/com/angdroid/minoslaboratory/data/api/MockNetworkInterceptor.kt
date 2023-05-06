@@ -3,9 +3,12 @@ package com.angdroid.minoslaboratory.data.api
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.ResponseBody.Companion.toResponseBody
+import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.random.Random
 
-class MockNetworkInterceptor : Interceptor {
+@Singleton
+class MockNetworkInterceptor @Inject constructor() : Interceptor {
 
     private val mockResponses = mutableListOf<MockResponse>()
 
