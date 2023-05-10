@@ -21,11 +21,4 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
     override suspend fun getUserCompany(userId: UInt): String = withContext(coroutineContext) {
         "마드라스체크"
     }
-
-    override suspend fun getUserInfo(userName: String): User = withContext(coroutineContext) {
-        val userId = getUserId(userName)
-        val userCompany = getUserCompany(userId)
-        User(userName, userCompany, userId.toString())
-    }
-
 }

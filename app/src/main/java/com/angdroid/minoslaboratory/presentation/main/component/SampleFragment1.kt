@@ -29,7 +29,13 @@ class SampleFragment1 : LifecycleCallbackFragment<FragmentSample1Binding>(R.layo
         }
 
         binding.btnSendEvent1.setOnClickListener {
+            sampleViewModel.applyWorkManager()
             sampleViewModel.sendEvent(object : EventState {})
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        sampleViewModel.worker.cancel(true)
     }
 }

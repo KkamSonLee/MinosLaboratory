@@ -26,11 +26,6 @@
             android:name=".presentation.main.component.Sample1Activity"
             android:exported="true">
 
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -38,6 +33,11 @@
         <activity
             android:name=".presentation.main.component.MainMviActivity"
             android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
 
         <provider
