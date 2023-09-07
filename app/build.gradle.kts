@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
     id("kotlin-kapt")
@@ -44,6 +45,11 @@ android {
 dependencies {
     addAndroidXDependencies()
     addNetworkDependencies()
+    implementation(KotlinDependencies.annotation)
+    implementation(KotlinDependencies.kotlinxSerialization)
+    implementation(KotlinDependencies.kotlin)
+    implementation(KotlinDependencies.coroutines)
+    implementation(ThirdPartyDependencies.KOTLINX_SERIALAZATION_CONVERTER)
     addRoomDependencies()
     addNavigationDependencies()
     addLifecycleDependencies()

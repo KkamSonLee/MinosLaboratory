@@ -1,5 +1,10 @@
 object KotlinDependencies {
-
+    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
+    const val kotlinxSerialization =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.KotlinxSerializationJsonVersion}"
+    const val coroutines =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KotlinCoroutinesVersion}"
+    const val annotation = "androidx.annotation:annotation:${Versions.kotlinVersion}"
 }
 
 object AndroidXDependencies {

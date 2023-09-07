@@ -1,5 +1,6 @@
 object Versions {
 
+    const val kotlinVersion = "1.8.0"
     const val KotlinCoroutinesVersion = "1.6.1"
     const val CoreKtxVersion = "1.7.0"
     const val HiltVersion = "2.42"

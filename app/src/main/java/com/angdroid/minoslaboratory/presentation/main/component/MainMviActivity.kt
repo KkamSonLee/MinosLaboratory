@@ -28,11 +28,20 @@ class MainMviActivity : BaseMviActivity<ActivityMainBinding, MainViewState, Main
 
     private fun clickEvent() {
         binding.button.setOnClickListener {
-            ownViewModel.emitEvent(MainViewModelAction.FetchUserData)
-            Notification(this, "titleasdashdaskdhasjkdhasjkdhaskdjfahlsadfkjhsafjksdhfjkslahfsajkfhsdkjfsahksd\njasdsadad\nsadasdasdsadsfh", "bBOBOBOBOBOody")
+            ownViewModel.getHelloMessage()
+//            ownViewModel.emitEvent(MainViewModelAction.FetchUserData)
+//            Notification(this, "titleasdashdaskdhasjkdhasjkdhaskdjfahlsadfkjhsafjksdhfjkslahfsajkfhsdkjfsahksd\njasdsadad\nsadasdasdsadsfh", "bBOBOBOBOBOody")
         }
         binding.button2.setOnClickListener {
-            ownViewModel.emitDelayEvent(MainViewModelAction.FetchUserData)
+//            ownViewModel.emitDelayEvent(MainViewModelAction.FetchUserData)
+
+            ownViewModel.getMessage()
+        }
+
+        binding.button3.setOnClickListener {
+//            ownViewModel.emitDelayEvent(MainViewModelAction.FetchUserData)
+
+            ownViewModel.postMessage()
         }
     }
 

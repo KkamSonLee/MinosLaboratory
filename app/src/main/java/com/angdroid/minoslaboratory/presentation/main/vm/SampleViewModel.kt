@@ -9,7 +9,6 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.angdroid.minoslaboratory.presentation.base.state.EventState
 import com.angdroid.minoslaboratory.presentation.base.state.ViewState
-import com.angdroid.minoslaboratory.presentation.main.state.MainContract
 import com.angdroid.minoslaboratory.presentation.main.worker.IntervalSendWorker
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.channels.BufferOverflow

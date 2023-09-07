@@ -3,29 +3,30 @@ package com.angdroid.minoslaboratory.presentation.main.vm
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.viewModelScope
-import androidx.work.Constraints
-import androidx.work.NetworkType
-import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.angdroid.minoslaboratory.presentation.base.component.BaseMviViewModel
+import com.angdroid.minoslaboratory.data.dto.MyData
 import com.angdroid.minoslaboratory.domain.repository.main.MainRepository
 import com.angdroid.minoslaboratory.domain.usecase.GetUserInfo
+import com.angdroid.minoslaboratory.presentation.base.component.BaseMviViewModel
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainSideEffect
+import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewModelAction
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewState
 import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewStateImpl
-import com.angdroid.minoslaboratory.presentation.main.state.MainContract.MainViewModelAction
-import com.angdroid.minoslaboratory.presentation.main.worker.IntervalSendWorker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import java.time.LocalDateTime
-import java.util.concurrent.TimeUnit
+import java.util.UUID
 import javax.inject.Inject
 
 
 @HiltViewModel
-class MainMviViewModel @Inject constructor(private val getUserInfoUseCase: GetUserInfo, @ApplicationContext context:Context) : BaseMviViewModel<MainViewState, MainViewModelAction, MainSideEffect>() {
+class MainMviViewModel @Inject constructor(
+    private val mainRepository: MainRepository,
+    private val getUserInfoUseCase: GetUserInfo, @ApplicationContext context: Context
+) : BaseMviViewModel<MainViewState, MainViewModelAction, MainSideEffect>() {
 
     private val _state = MainViewStateImpl()
     override val state: MainViewState = _state
@@ -34,8 +35,31 @@ class MainMviViewModel @Inject constructor(private val getUserInfoUseCase: GetUs
 
     init {
         Log.e("LMH", "start Time ${LocalDateTime.now()}")
-        val request = PeriodicWorkRequestBuilder<IntervalSendWorker>(15, TimeUnit.MINUTES, 1, TimeUnit.MINUTES).setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()).build()
-        _worker.enqueue(request)
+        /*val request =
+            PeriodicWorkRequestBuilder<IntervalSendWorker>(15, TimeUnit.MINUTES, 1, TimeUnit.MINUTES).setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
+                .build()
+        _worker.enqueue(request)*/
+    }
+
+    fun getHelloMessage() {
+        viewModelScope.launch {
+            val message = mainRepository.getHelloWorld()
+            Timber.tag("LMH").e(message)
+        }
+    }
+
+    fun getMessage() {
+        viewModelScope.launch {
+            val message = mainRepository.getMessage()
+            Timber.tag("LMH").e("${message.id} : ${message.text}")
+        }
+    }
+
+    fun postMessage() {
+        viewModelScope.launch {
+            val message = mainRepository.postMessage(MyData(UUID.randomUUID().toString(), "Mino!"))
+            Timber.tag("LMH").e("${message.id} : ${message.text}")
+        }
     }
 
 
@@ -52,6 +76,7 @@ class MainMviViewModel @Inject constructor(private val getUserInfoUseCase: GetUs
             MainViewModelAction.FetchUserData -> {
                 fetchUserInfo()
             }
+
             else -> {}
         }
     }
